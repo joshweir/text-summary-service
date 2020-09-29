@@ -64,7 +64,7 @@ target/
 *.json
 
 terraform/bundle.zip
-terraform/.terraform/**
+terraform-provider-aws*
 
 bin/
 breadability*/
@@ -84,3 +84,5 @@ sumy*/
 tests*/
 tqdm*/
 urllib3*/
+
+lambda-layer.zip

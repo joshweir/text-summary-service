@@ -42,6 +42,9 @@ def validate_input(event):
       "parsed": body
     }
 
+  if "method" not in body:
+    body["method"] = "lsa"
+
   return {
     "ok": is_ok,
     "error": error_message,
@@ -67,7 +70,7 @@ def lambda_handler(event, context):
     }
  
   try:
-    sumy_service_result = sumy_service.call(parsed_input["parsed"]["text"], parsed_input["parsed"]["sentences"])
+    sumy_service_result = sumy_service(parsed_input["parsed"]["text"], parsed_input["parsed"]["sentences"], parsed_input["parsed"]["method"])
   except Exception: 
     error_message = traceback.format_exc()
     print('error occurred:', error_message)

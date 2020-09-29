@@ -7,6 +7,7 @@ resource "aws_lambda_function" "text_summarizer_lambda" {
   runtime       = "python3.8"
   timeout       = "60"
   memory_size   = "3008"
+  layers        = ["arn:aws:lambda:ap-southeast-2:888686886224:layer:text_summarizer:1"]
 }
 
 resource "aws_iam_role" "role_for_text_summarizer_lambda" {

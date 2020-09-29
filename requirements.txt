@@ -1,2 +1,2 @@
-requests
 sumy[LSA] --no-binary=regex
+git+https://github.com/huggingface/hfapi/
